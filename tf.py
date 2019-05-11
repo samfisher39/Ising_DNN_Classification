@@ -21,9 +21,13 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 seed = 1
 np.random.seed(seed)
 tf.set_random_seed(seed)
-PROMPT = "+ "
+
 N_FEATURES_X = N_FEATURES_Y = 40
 N_FEATURES = int(N_FEATURES_X * N_FEATURES_Y)
+
+PROMPT = "#"
+info_box_width = 60
+
 
 # %% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Get matplotlib backends ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import matplotlib.rcsetup as rc_setup
@@ -31,6 +35,58 @@ import matplotlib.rcsetup as rc_setup
 print(rc_setup.interactive_bk)
 print(rc_setup.non_interactive_bk)
 print(plt.get_backend())
+
+# %% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Defining some needed functions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+def get_nearest_proper_divisor(_divisor, _number):
+    """
+    sequentially checks the next higher/lower number e.g. 10->9->11->8->12...
+    if it is a proper divisor of _number
+
+    :param _divisor: (int) number of which the next nearest proper divisor of _number is wanted
+    :param _number: (int) an arbitrary int
+    :return: (int) next nearest divisor to _divisor of _number
+    """
+    if _divisor > _number or _divisor < 0:
+        raise ValueError("The following statement is not fulfilled 0 < divisor < number!")
+
+    if _number % _divisor == 0:
+        return _divisor
+    else:
+        for i in range(1, _number):
+            _divisor = (_divisor + (-1) ** i * i)
+            if _number % _divisor == 0:
+                return _divisor
+    print("Error in method 'get_nearest_proper_divisor', found no divisor of %i" % _number)
+
+def printBar():
+
+    times = info_box_width // len(PROMPT)
+    print(times * PROMPT)
+
+def printLog(*_string, _top=True, _bottom=True):
+
+    if _top:
+        printBar()
+
+    for i,line in enumerate(_string):
+        length = len(line)
+        if length < info_box_width:
+            space = info_box_width - length - 2*len(PROMPT)
+            if space % 2 == 0:
+                line_printed = PROMPT + (space // 2 - 1) * " " + line + space // 2 * " " + PROMPT[::-1]
+            else:
+                line_printed = PROMPT + space // 2 * " " + line + space // 2 * " " + PROMPT[::-1]
+        else:
+            overflow = length - info_box_width
+            if overflow % 2 == 0:
+                line_printed = PROMPT + " " + line[: -overflow - 2*len(PROMPT) - 6] + "... " + PROMPT[::-1]
+            else:
+                line_printed = PROMPT + " " + line[: -overflow - 2*len(PROMPT) - 5] + "... " + PROMPT[::-1]
+        print(line_printed)
+
+    if _bottom:
+        printBar()
 
 
 # %% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ define plotting function ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -103,9 +159,7 @@ def init(_reinit=False, _save=True, _verbose=False, _n_features=1600):
     :return: data: array(n_samples, n_features), labels: array(n_samples,)
     """
 
-    print(30 * "~")
-    print(10 * "~" + " PRE_INIT " + 10 * "~")
-    print(30 * "~")
+    printLog("Initializing data")
 
     # define URLs of the data and labels file
     _url_root = "https://physics.bu.edu/~pankajm/ML-Review-Datasets/isingMC/"
@@ -123,35 +177,33 @@ def init(_reinit=False, _save=True, _verbose=False, _n_features=1600):
             _data = pickle.load(datafile)
         with open("./data/labels.pkl", 'rb') as labelsfile:
             _labels = pickle.load(labelsfile)
-        print(PROMPT + 'Files found locally! Importing...')
+        printLog("Files found locally! Importing...", _top=False, _bottom=False)
     except:  # if files not found, download them
-        print(PROMPT + "Files not found locally. Downloading from \
-                 https://physics.bu.edu/~pankajm/ML-Review-Datasets/isingMC/")
+        printLog("Files not found locally. Downloading from \
+                 https://physics.bu.edu/~pankajm/ML-Review-Datasets/isingMC/", _top=False, _bottom=False)
         if _save:  # if save=True then, save the files to the local "./data/" folder, otherwise just load them
             # temporarily
             if _verbose:
-                print(PROMPT + "\tDownloading/Saving ISING data file...")
+                printLog("Downloading/Saving ISING data file...", _top=False, _bottom=False)
             urlretrieve(_data_path, "./data/data.pkl")
             if _verbose:
-                print(PROMPT + "\t\t...done")
-                print(PROMPT + "\tDownloading/Saving ISING labels file...")
+                printLog("...done", "Downloading/Saving ISING labels file...", _top=False, _bottom=False)
             urlretrieve(_labels_path, "./data/labels.pkl")
             if _verbose:
-                print(PROMPT + "\t\t...done")
+                printLog("...done", _top=False, _bottom=False)
             with open("data/data.pkl", 'rb') as datafile:
                 _data = pickle.load(datafile)
             with open("data/labels.pkl", 'rb') as labelsfile:
                 _labels = pickle.load(labelsfile)
         else:
             if _verbose:
-                print(PROMPT + "\tDownloading ISING data file...")
+                printLog("Downloading ISING data file...", _top=False, _bottom=False)
             _data = pickle.load(urlopen(_data_path))
             if _verbose:
-                print(PROMPT + "\t\t...done")
-                print(PROMPT + "\tDownloading ISING labels file...")
+                printLog("...done", "Downloading ISING labels file...", _top=False, _bottom=False)
             _labels = pickle.load(urlopen(_labels_path))
             if _verbose:
-                print(PROMPT + "\t\t...done")
+                printLog("...done", _top=False, _bottom=False)
 
     # process data file, to be shaped into an (n_samples, n_features)-sized array
     _data = np.unpackbits(_data).astype("int").reshape(-1, _n_features)
@@ -159,9 +211,8 @@ def init(_reinit=False, _save=True, _verbose=False, _n_features=1600):
     _data[np.where(_data == 0)] = -1
 
     if _verbose:
-        print(PROMPT + "PRE_INIT completed:")
-        print(PROMPT + "\t\t- # features: %i" % _n_features)
-        print(PROMPT + "\t\t- # samples: %i" % _data.shape[0])
+        printLog("PRE_INIT completed:", "- # features: %i" % _n_features, _top=False, _bottom=False)
+        printLog("- # samples: %i" % _data.shape[0], _top=False, _bottom=True)
 
     # return loaded objects
     return _data, _labels
@@ -201,7 +252,6 @@ def post_init(_data, _labels, _n_validation=0.1, _n_test=0.1):
                                                                             test_size=_n_test,
                                                                             train_size=1 - _n_test)
 
-    print(_N_validation)
     _x_train_val = _x_train[:_N_validation, :]
     _y_train_val = _y_train[:_N_validation, :]
     _x_train = _x_train[_N_validation:, :]
@@ -232,9 +282,7 @@ class DataSet(object):
     """
 
     def __init__(self, _x_dat, _y_dat, _dtype=np.dtype(np.float32), verbose=False):
-        print(20 * PROMPT)
-        print(PROMPT)
-        print(PROMPT + "Initializing data object")
+        printLog("Initializing data object", _top=True, _bottom=False)
         if _x_dat.shape[0] != _y_dat.shape[0]:
             raise ValueError("dimension mismatch")
 
@@ -243,7 +291,7 @@ class DataSet(object):
             raise TypeError("Invalid dtype %r, expected uint8, float32 or float64" % _dtype)
         else:
             if verbose:
-                print(PROMPT + "\t\tUsing dtype %r" % _dtype)
+                printLog("Using dtype %r" % _dtype, _bottom=False, _top=False)
 
         if _dtype == np.dtype(np.float32):
             _x_dat = _x_dat.astype(np.float32)
@@ -260,10 +308,7 @@ class DataSet(object):
         self.epochs_completed = 0
         self.index_in_epoch = 0
 
-        print(PROMPT + "\t\t...done")
-        print(PROMPT)
-        print(20 * PROMPT)
-        print(PROMPT)
+        printLog("...done", _bottom=True, _top=False)
 
     def get_batches(self, _n_batches=None, _seed=None):
         """
@@ -277,16 +322,15 @@ class DataSet(object):
         :param _seed: seed for the random shuffling of the data and label arrays.
         :return: data: array(_n_batches, batch_size, n_features), labels: array(_n_batches, batch_size,)
         """
-        if _n_batches == None:
+        if _n_batches == None or _n_batches == 1:
             return self.x_data, self.y_data
 
-        print()
-        print(20 * PROMPT)
-        print(PROMPT + "Creating batches")
+        printLog("Creating batches...", _top=True, _bottom=False)
         if self.n_samples % _n_batches != 0:
-            raise ValueError("batch_size must be a proper divisor of n_samples. Got n_samples: %i, batch_size: %i" % (
-                self.n_samples, _n_batches))
-        _n_batches = self.n_samples / _n_batches
+            _nearest_proper_divisor = get_nearest_proper_divisor(_n_batches, self.n_samples)
+            printLog("%i is not a proper divisor of %i" % (_n_batches, self.n_samples), "using %i instead!" %
+                     _nearest_proper_divisor, _bottom=False, _top=False)
+            _n_batches = _nearest_proper_divisor
 
         if seed is not None:
             np.random.seed(seed)
@@ -295,9 +339,7 @@ class DataSet(object):
         self.x_data = self.x_data[p]
         self.y_data = self.y_data[p]
 
-        print(PROMPT + "\t\t...done")
-        print(PROMPT)
-        print(20 * PROMPT)
+        printLog("...done", _top=False, _bottom=True)
 
         # split the whole data and labels arrays into _n_batches different packages/batches
         return np.array(np.split(self.x_data, _n_batches)), np.array(np.split(self.y_data, _n_batches))
@@ -383,38 +425,10 @@ class DnnModel(object):
         self.merged = tf.summary.merge_all()
 
 
-# %%
-
-def get_nearest_proper_divisor(_divisor, _number):
-    """
-    sequentially checks the next higher/lower number e.g. 10->9->11->8->12...
-    if it is a proper divisor of _number
-
-    :param _divisor: (int) number of which the next nearest proper divisor of _number is wanted
-    :param _number: (int) an arbitrary int
-    :return: (int) next nearest divisor to _divisor of _number
-    """
-    if _divisor > _number or _divisor < 0:
-        raise ValueError("The following statement is not fulfilled 0 < divisor < number!")
-
-    if _number % _divisor == 0:
-        print(PROMPT + "%i is already a proper divisor of %i" % (_divisor, _number))
-        return _divisor
-    else:
-        for i in range(1, _number):
-            _divisor = (_divisor + (-1) ** i * i)
-            if _number % _divisor == 0:
-                print(PROMPT + "Found proper divisor %i of %i" % (_divisor, _number))
-                return _divisor
-    print("Error in method 'get_nearest_proper_divisor', found no divisor of %i" % _number)
-
-# %%
-
-divisor = get_nearest_proper_divisor(12345,102600)
-
 # %% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ define train/test model ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-def analyze_dnn(_data_set, _n_neurons, _n_layers, _optimizer_kwargs, _n_epochs, _n_batches, _n_features=1600):
+def analyze_dnn(_data_set, _n_neurons, _n_layers, _optimizer_kwargs, _n_epochs, _n_batches, _n_features=1600,
+                _seed=None):
     """trains the model on a test set and evaluates its performance on another (excluded from the train set) test set.
     finally also predictions about critical states (excluded in train and test sets) will be made."""
 
@@ -427,12 +441,12 @@ def analyze_dnn(_data_set, _n_neurons, _n_layers, _optimizer_kwargs, _n_epochs, 
         # TRAINING
         print(sess.run(dnn.init))
         train_writer = tf.summary.FileWriter("./logs/", sess.graph)
-        x_batches, y_batches = _data_set["train"].get_batches(_n_batches=_n_batches)
+        x_batches, y_batches = _data_set["train"].get_batches(_n_batches=_n_batches, _seed=_seed)
+        print()
+
         for epoch_idx in range(_n_epochs):
-            print("\n")
-            print(10 * PROMPT)
-            print(PROMPT + "    EPOCH #%i    " % (epoch_idx+1) + PROMPT)
-            print(10 * PROMPT)
+            printLog("EPOCH %i/%i" % (epoch_idx+1, _n_epochs))
+            printLog("", _top=False, _bottom=False)
 
             for batch_idx in range(x_batches.shape[0]):
                 batch_feed_dict = {dnn.x_data: x_batches[batch_idx, :, :],
@@ -448,12 +462,13 @@ def analyze_dnn(_data_set, _n_neurons, _n_layers, _optimizer_kwargs, _n_epochs, 
                 train_writer.add_summary(_summary, sess.run(dnn.global_step))
                 if x_batches.shape[0] // 10 != 0:
                     if batch_idx % (x_batches.shape[0] // 10) == 0:
-                        print("Batch %i/%i: Loss: %1.2f, Accuracy: %1.2f" % (batch_idx+1, x_batches.shape[0],
+                        printLog("Batch %i/%i: Loss: %1.2f, Accuracy: %1.2f" % (batch_idx+1, x_batches.shape[0],
                                                                              _loss_batch,
-                                                                         _accuracy_batch))
+                                                                         _accuracy_batch), _bottom=False, _top=False)
                 else:
-                    print("Batch %i/%i: Loss: %1.2f, Accuracy: %1.2f" % (batch_idx+1, x_batches.shape[0], _loss_batch,
-                                                                         _accuracy_batch))
+                    printLog("Batch %i/%i: Loss: %1.2f, Accuracy: %1.2f" % (batch_idx+1, x_batches.shape[0],
+                                                                            _loss_batch,
+                                                                         _accuracy_batch), _bottom=False, _top=False)
 
         # TESTING
         x_batches_test, y_batches_test = _data_set["test"].get_batches()
@@ -462,7 +477,8 @@ def analyze_dnn(_data_set, _n_neurons, _n_layers, _optimizer_kwargs, _n_epochs, 
             dnn.y_data: y_batches_test,
             dnn.dropout_rate: 1.0
         })
-        print("\nTEST-SET:\n\t- LOSS: %f\n\t- ACCURACY: %f" % (_loss_test, _accuracy_test))
+        printLog("", "TEST-SET:", "- Loss: %f" % _loss_test, "- Accuracy: %f" % _accuracy_test, _bottom=False,
+                 _top=False)
 
         # CRITICAL
         x_batches_crit, y_batches_crit = _data_set["crit"].get_batches()
@@ -471,7 +487,7 @@ def analyze_dnn(_data_set, _n_neurons, _n_layers, _optimizer_kwargs, _n_epochs, 
             dnn.y_data: y_batches_crit,
             dnn.dropout_rate: 1.0
         })
-        print("\nCRIT-SET:\n\t- LOSS: %f\n\t- ACCURACY: %f" % (_loss_crit, _accuracy_crit))
+        printLog("", "CRIT-SET:", "- Loss: %f" % _loss_crit, "- Accuracy: %f" %  _accuracy_crit, "", _top=False)
 
 
 # %% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ optimized args search ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -494,7 +510,7 @@ data_set = post_init(data, labels)
 
 # %%
 n_neurons = 100
-n_layers = 1
-analyze_dnn(data_set, n_neurons, n_layers, _optimizer_kwargs=dict(learning_rate=0.01), _n_epochs=4,
-            _n_batches=102600 / 2)
+n_layers = 2
+analyze_dnn(data_set, n_neurons, n_layers, _optimizer_kwargs=dict(learning_rate=0.01), _n_epochs=5,
+            _n_batches=3000, _seed=1)
 
