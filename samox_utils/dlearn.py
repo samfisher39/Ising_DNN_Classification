@@ -29,6 +29,7 @@ class DnnModel(object):
         self.features = _n_features
         self.dropout_rate = tf.placeholder(dtype=_dtype, name="dropout_rate")
         self.n_categories = 2
+        self.isTraining = True
 
         with tf.variable_scope("input"):
             self.x_data = tf.placeholder(dtype=_dtype, shape=(None, self.features), name="x_data")
@@ -54,12 +55,15 @@ class DnnModel(object):
             activation = tf.nn.relu(tf.matmul(activation, w_first) + b_first)
             for i in range(_n_hidden_layers - 1):
                 activation = tf.nn.relu(tf.matmul(activation, w_mutable[i, :, :], ) + b_mutable[i, :])
-            prediction = tf.matmul(activation, w_last) + b_last
+            if(self.isTraining):
+                prediction = tf.matmul(activation, w_last) + b_last
+            else:
+                prediction = tf.nn.softmax(tf.matmul(activation, w_last) + b_last)
             self.y_pred = prediction
 
         with tf.variable_scope("loss"):
             self.loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(labels=self.y_data,
-                                                                                  logits=self.y_pred))
+                                                                              logits=self.y_pred))
             tf.summary.scalar("loss", self.loss)
 
         with tf.variable_scope("optimizer"):
@@ -79,6 +83,9 @@ class DnnModel(object):
         print("\n\n\n")
         with open("./logs/latest.txt", "a+") as log:
             log.write("\n\n\n")
+
+    def setIsTraining(self, _isTraining):
+        self.isTraining = _isTraining
 
 
 # %% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ define train/test model ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -100,13 +107,13 @@ def analyze_dnn(_data_set, _n_neurons, _n_layers, _optimizer_kwargs, _n_epochs, 
     training set of the Ising model this value is 40x40=1600
     :param _seed: (int) seed for random numbers
     :param _dtype: dtype for the calculations (default: double precision)
-    :return: (epochs, batches) array of accuracy during the training,
-    (epochs, batches) array of loss during the training,
+    :return: (n_epochs, n_batches) array of accuracy during the training,
+    (n_epochs, n_batches) array of loss during the training,
     accuracy obtained from the test data set
     accuracy obtained from the critical data set
     """
 
-    tf.reset_default_graph()
+    tf.reset_default_graph()  # prevent variables from being used/defined multiple times
 
     dnn = DnnModel(_n_neurons=_n_neurons, _n_hidden_layers=_n_layers, _n_features=_n_features,
                    _optimizer_kwargs=_optimizer_kwargs, _dtype=_dtype)
@@ -129,6 +136,7 @@ def analyze_dnn(_data_set, _n_neurons, _n_layers, _optimizer_kwargs, _n_epochs, 
         with open("./logs/latest.txt", "a+") as log:
             log.write("\n")
 
+        dnn.setIsTraining(True)
         for epoch_idx in range(_n_epochs):
             print_log("EPOCH %i/%i" % (epoch_idx + 1, _n_epochs), log_file="./logs/latest.txt")
             print_log("", _top=False, _bottom=False, log_file="./logs/latest.txt")
@@ -144,10 +152,10 @@ def analyze_dnn(_data_set, _n_neurons, _n_layers, _optimizer_kwargs, _n_epochs, 
                 _loss_batch, _accuracy_batch = sess.run([dnn.loss, dnn.accuracy],
                                                         feed_dict=batch_feed_dict)
 
-                if _accuracy_batch < 0:
-                    _accuracy_batch = 0
-                elif _accuracy_batch > 1:
-                    _accuracy_batch = 1
+                # if _accuracy_batch < 0:
+                #     _accuracy_batch = 0
+                # elif _accuracy_batch > 1:
+                #     _accuracy_batch = 1
 
                 accuracy[epoch_idx, batch_idx] = _accuracy_batch
                 loss[epoch_idx, batch_idx] = _loss_batch
@@ -169,6 +177,7 @@ def analyze_dnn(_data_set, _n_neurons, _n_layers, _optimizer_kwargs, _n_epochs, 
         print_hline()
 
         # TESTING
+        dnn.setIsTraining(False) # change activation function of last layer to softmax
         x_batches_test, y_batches_test = _data_set["test"].get_batches()
         _accuracy_test, _loss_test = sess.run([dnn.accuracy, dnn.loss], feed_dict={
             dnn.x_data: x_batches_test,

@@ -38,15 +38,15 @@ data, labels = init(_reinit=False, _save=True, _verbose=True)
 data_set = post_init(data, labels)
 
 # %% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Plotting some samples ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-n_plots = 25
+n_plots = 20
 rdm_idx = np.floor(np.random.rand(n_plots) * 159999).astype("int")
 plot_samples(data, labels, _sample_indices=rdm_idx,
              _title="some ordered (1), mixed (1|0) and unordered (0) states",
              _title_pad=50)
 
 # %%
-learning_rates = np.logspace(-4, -1, 4)
-number_of_neurons = np.logspace(0, 3, 4).astype("int")
+learning_rates = np.logspace(-3, -1, 3)
+number_of_neurons = np.logspace(1, 3, 3).astype("int")
 print(learning_rates)
 print(number_of_neurons)
 
@@ -58,6 +58,6 @@ summary, acc_test, acc_crit = find_optimal_args(data_set, learning_rates, number
 
 
 # %%
-plot_calculations(summary, acc_test, acc_crit, learning_rates, number_of_neurons)
+plot_calculations(summary, acc_test, acc_crit, learning_rates, number_of_neurons, _smooth=10)
 
 

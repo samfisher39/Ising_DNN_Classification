@@ -2,103 +2,316 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c38ae2f-9898-4ce9-9cbb-cf9612e21297" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/samox.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ising_dnn_solver.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/samox_utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/samox_utils/dataset.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/samox_utils/dlearn.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/samox_utils/logging_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/samox_utils/mathx.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/samox_utils/plotting.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/samox_utils/serialization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557508883.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557584841.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557588571.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557588627.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557588685.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557588789.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557588824.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557588873.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557588922.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557588959.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557588990.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557589235.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557589267.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557589342.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557589469.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557589499.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557589545.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557589572.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557589613.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557589686.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557589704.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557589855.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557589903.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557589977.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557590199.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557590258.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557590278.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557590339.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557590353.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557590419.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557590441.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557590537.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557590631.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557590680.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557590690.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557590749.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557590802.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557590813.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557590876.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557590906.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557590933.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557590945.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557590962.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557590979.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557590998.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557591014.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557591024.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557591037.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557591050.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557591061.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557591077.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557591086.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557591145.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557591220.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557591237.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557591398.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557591412.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557591460.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557591550.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557591589.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557591613.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557591629.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557594175.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557594485.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557594506.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557594552.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557594633.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557594687.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557594739.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557594855.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557594901.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557594944.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557594982.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557599837.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557599949.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557600044.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557600065.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557600143.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557600180.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557600273.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557600325.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557600362.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557600439.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557600482.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/events.out.tfevents.1557600588.samox-mint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tf.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ising_dnn_solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ising_dnn_solver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/latest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/latest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557783401.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557783672.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557783709.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557783737.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557783777.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557788061.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557788082.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557788091.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557788097.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557788112.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557788135.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557788223.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557788240.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557788272.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557788287.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557788331.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557788346.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557788403.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557788505.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557788515.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557789697.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557790156.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557790500.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557790577.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557790670.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557790675.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557790731.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557856864.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557856960.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557856965.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557857161.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557857457.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557857587.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557857695.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557857734.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557857790.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557857815.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557857841.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557857884.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557857903.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557857978.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557857995.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858021.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858049.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858175.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858232.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858369.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858459.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858462.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858465.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858468.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858471.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858475.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858478.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858481.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858484.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858489.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858494.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858499.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858503.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858520.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858538.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858557.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858632.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858636.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858639.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858644.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858710.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858779.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858811.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858846.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858849.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858852.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858857.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858864.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858867.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858871.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858875.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858943.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858960.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858963.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858966.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557858971.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557859018.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557859022.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557859025.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557859030.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557859036.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557859039.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557859109.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557859112.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557859332.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557859335.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557859366.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557859369.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557859571.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557859574.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557859658.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557859662.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557859717.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557859724.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557859833.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557859943.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557860075.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557860525.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557860631.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557860740.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557922239.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557922258.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557922261.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557922597.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557922600.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557923051.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557923055.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557923058.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557923061.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557923064.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557923420.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557923423.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557923426.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557923654.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557923658.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557923661.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557923713.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557923716.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557923719.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557923723.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557923726.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557923729.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557924595.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557924599.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557924602.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557924605.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557924608.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557924611.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557924614.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557924617.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557924621.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557924625.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557924629.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557924633.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557924637.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557924654.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557924670.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557924686.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557925202.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557925483.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557925486.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557925489.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557925492.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557925495.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557925498.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557925501.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557925504.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557925507.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557925512.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557925516.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557925520.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557925524.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557925540.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557925556.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557925572.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926148.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926151.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926155.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926158.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926161.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926165.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926169.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926172.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926176.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926180.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926185.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926190.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926194.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926213.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926232.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926249.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926312.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926316.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926319.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926323.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926351.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926354.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926372.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926376.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926379.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926384.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926503.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926507.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926674.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926677.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926966.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926969.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926973.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926976.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926979.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926982.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926985.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926989.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926992.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557926996.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557927001.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557927005.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557927564.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557927568.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557927571.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557927574.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557927577.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557927580.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557927584.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557927587.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557927591.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557927595.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557927599.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557927604.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557927834.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557927837.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557927841.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557927845.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557928091.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557928094.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557928097.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557928102.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557929736.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557929739.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557929742.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557929745.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557929748.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557929752.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557929755.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557929758.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557929761.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557929766.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557929770.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557929774.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557929778.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557929794.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557929810.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557929826.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557932510.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557932514.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557932517.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557932520.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557932523.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557932528.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557932532.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557932536.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557932541.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557932557.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557932574.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557932593.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557932610.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557932688.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557932767.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557932842.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557933787.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557933790.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557933793.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557933796.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557933799.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557933803.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557933806.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557933809.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557933813.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557933817.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557933821.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557933825.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557933830.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557933846.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557933862.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557933878.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934247.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934372.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934375.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934378.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934382.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934385.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934388.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934391.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934395.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934398.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934403.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934407.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934412.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934416.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934433.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934449.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934466.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934712.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934715.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934719.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934722.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934725.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934729.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934732.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934736.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934739.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934743.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934748.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934752.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934757.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934775.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934793.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/train/events.out.tfevents.1557934812.samox-nexus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/samox_utils/dlearn.py" beforeDir="false" afterPath="$PROJECT_DIR$/samox_utils/dlearn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/samox_utils/plotting.py" beforeDir="false" afterPath="$PROJECT_DIR$/samox_utils/plotting.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,11 +324,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Ising_dnn_solver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="35" column="30" lean-forward="true" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#203#1" expanded="true" />
-              </folding>
+            <state relative-caret-position="390">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
             </state>
           </provider>
         </entry>
@@ -123,11 +333,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/samox_utils/dlearn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="78" column="14" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="14" />
+            <state relative-caret-position="315">
+              <caret line="56" column="102" lean-forward="true" selection-start-line="56" selection-start-column="102" selection-end-line="61" selection-end-column="36" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <element signature="e#4127#5483#1" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -136,7 +345,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/samox_utils/dataset.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
+            <state relative-caret-position="795">
               <caret line="56" column="32" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -148,8 +357,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/samox_utils/plotting.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="682">
-              <caret line="76" column="28" selection-start-line="76" selection-start-column="28" selection-end-line="76" selection-end-column="28" />
+            <state relative-caret-position="1890">
+              <caret line="127" column="23" selection-start-line="127" selection-start-column="23" selection-end-line="127" selection-end-column="23" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -160,8 +369,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/samox_utils/serialization.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+            <state relative-caret-position="300">
+              <caret line="28" column="76" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="76" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -172,7 +381,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/samox_utils/logging_utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
+            <state relative-caret-position="495">
               <caret line="33" column="14" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="14" />
             </state>
           </provider>
@@ -231,25 +440,26 @@
         <option value="$PROJECT_DIR$/samox_utils/__init__.py" />
         <option value="$PROJECT_DIR$/tf.py" />
         <option value="$PROJECT_DIR$/samox_utils/dataset.py" />
-        <option value="$PROJECT_DIR$/samox_utils/plotting.py" />
         <option value="$PROJECT_DIR$/samox_utils/logging_utils.py" />
+        <option value="$PROJECT_DIR$/samox_utils/serialization.py" />
+        <option value="$PROJECT_DIR$/samox_utils/plotting.py" />
         <option value="$PROJECT_DIR$/Ising_dnn_solver.py" />
         <option value="$PROJECT_DIR$/samox_utils/dlearn.py" />
-        <option value="$PROJECT_DIR$/samox_utils/serialization.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1920" />
-    <option name="y" value="27" />
-    <option name="width" value="1920" />
-    <option name="height" value="1052" />
+    <option name="x" value="240" />
+    <option name="y" value="163" />
+    <option name="width" value="1440" />
+    <option name="height" value="786" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -271,7 +481,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -300,83 +509,6 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Ising_dnn_solver">
-    <configuration name="Ising_dnn_solver" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Ising_DNN_Classification" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ising_dnn_solver.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="Ising_DNN_Classification" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="python" type="PythonConfigurationType" factoryName="Python">
-      <module name="Ising_DNN_Classification" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="/anaconda3/envs/NN-pycharm/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Python.python" />
-      <item itemvalue="Python.Ising_dnn_solver" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.Ising_dnn_solver" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -396,23 +528,29 @@
       <workItem from="1557922009421" duration="12154000" />
       <workItem from="1557934179008" duration="140000" />
       <workItem from="1557934333488" duration="618000" />
+      <workItem from="1558525755735" duration="722000" />
+      <workItem from="1559065141100" duration="608000" />
+      <workItem from="1559113787397" duration="285000" />
+      <workItem from="1559937881965" duration="1374000" />
+      <workItem from="1560006253566" duration="4921000" />
+      <workItem from="1560174025634" duration="1374000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33002000" />
+    <option name="totallyTimeSpent" value="42287000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="27" width="1920" height="1052" extended-state="6" />
+    <frame x="0" y="31" width="1920" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.13020277" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.14087513" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.3297414" />
-      <window_info anchor="bottom" id="Terminal" order="3" visible="true" weight="0.14978448" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="3" visible="true" weight="0.14777778" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.3297414" />
@@ -421,13 +559,13 @@
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="right" x="0" y="0" width="430" height="848" id="Documentation" order="0" sideWeight="0.25" side_tool="true" weight="0.32977587" />
+      <window_info anchor="right" x="0" y="0" width="430" height="848" id="Documentation" order="0" sideWeight="0.2594524" side_tool="true" visible="true" weight="0.3094984" />
       <window_info anchor="right" id="SciView" order="1" weight="0.32977587" />
       <window_info anchor="right" id="Database" order="2" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="3" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="5" weight="0.25" />
-      <window_info active="true" anchor="right" x="941" y="28" width="979" height="1052" id="Python Console" order="6" sideWeight="0.75" type="WINDOWED" visible="true" weight="0.44983992" />
+      <window_info anchor="right" auto_hide="true" x="1104" y="154" width="816" height="815" id="Python Console" order="6" sideWeight="0.7405476" visible="true" weight="0.3094984" />
     </layout>
     <layout-to-restore>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -480,10 +618,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///anaconda3/envs/NN-pycharm/lib/python3.7/site-packages/IPython/core/interactiveshell.py">
+    <entry file="file:///anaconda3/envs/NN-pycharm/lib/python3.7/site-packages/IPython/core/interactiveshell.py" />
+    <entry file="file://$PROJECT_DIR$/samox_utils/dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="56" column="32" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/samox_utils/plotting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1890">
+          <caret line="127" column="23" selection-start-line="127" selection-start-column="23" selection-end-line="127" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/samox_utils/serialization.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
-          <caret line="3295" selection-start-line="3295" selection-end-line="3295" />
+          <caret line="28" column="76" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="76" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/samox_utils/logging_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="14" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -496,59 +665,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/samox_utils/dlearn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="78" column="14" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#4127#5483#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/samox_utils/dataset.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="56" column="32" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/samox_utils/plotting.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="76" column="28" selection-start-line="76" selection-start-column="28" selection-end-line="76" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/samox_utils/serialization.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+        <state relative-caret-position="315">
+          <caret line="56" column="102" lean-forward="true" selection-start-line="56" selection-start-column="102" selection-end-line="61" selection-end-column="36" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/samox_utils/logging_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="33" column="14" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ising_dnn_solver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="35" column="30" lean-forward="true" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#203#1" expanded="true" />
-          </folding>
+        <state relative-caret-position="390">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>

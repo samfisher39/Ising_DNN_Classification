@@ -110,7 +110,7 @@ def smooth(y, box_pts):
     return smoothed
 
 
-def plot_calculations(_summary, _acc_test, _acc_crit, _learning_rates, _number_of_neurons):
+def plot_calculations(_summary, _acc_test, _acc_crit, _learning_rates, _number_of_neurons, _smooth=50):
 
     """
     plot the history of accuracy and loss for every learning rate and number of neurons and
@@ -125,7 +125,7 @@ def plot_calculations(_summary, _acc_test, _acc_crit, _learning_rates, _number_o
     :return: None
     """
 
-    smoothing = 50
+    smoothing = _smooth
     cutoff = 25
     iterations = range(len(_summary[0, 0, 1, :-cutoff]))
 
