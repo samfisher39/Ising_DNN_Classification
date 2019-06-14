@@ -1,6 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+from samox_utils.mathx import get_nearest_proper_divisor
+
 
 def plot_samples(_data, _labels, _sample_indices=None, _title="Sample Plots", _title_pad=20):
     """
@@ -20,7 +22,11 @@ def plot_samples(_data, _labels, _sample_indices=None, _title="Sample Plots", _t
     if _sample_indices.dtype not in (np.dtype(np.int64), np.dtype(np.int32)):
         raise TypeError("Invalid dtype for _sample_indices %r, expected int32 or int64" % _sample_indices.dtype.name)
     subplot_idx1 = np.math.floor(np.sqrt(9 / 16 * _sample_indices.shape[0]))
-    subplot_idx2 = len(_sample_indices) // subplot_idx1
+    if 0 != subplot_idx1:
+        subplot_idx2 = len(_sample_indices) // subplot_idx1
+    else:
+        subplot_idx1 = 1
+        subplot_idx2 = 1
     _n_plots = subplot_idx2 * subplot_idx1
 
     fig = plt.figure(figsize=(19.2, 10.8))  # make a 1920x1080 (16:9) plot
@@ -93,9 +99,13 @@ def plot_acc(fig, axis, _acc, _learning_rates, _number_of_neurons, _title):
     for _, _nn in enumerate(_number_of_neurons):
         y_ticks.append(str(_nn))
 
+    ax.set_xlabel("learning rate")
+    ax.set_ylabel("number of neurons")
+    ax.xaxis.set_label_position("bottom")
+    ax.xaxis.set_ticks_position("bottom")
     ax.set_xticklabels(x_ticks)
     ax.set_yticklabels(y_ticks)
-    ax.set_title(_title, pad=20)
+    ax.set_title(_title, pad=0)
 
 
 def smooth(y, box_pts):
@@ -110,7 +120,7 @@ def smooth(y, box_pts):
     return smoothed
 
 
-def plot_calculations(_summary, _acc_test, _acc_crit, _learning_rates, _number_of_neurons, _smooth=50):
+def plot_calculations(_summary, _acc_test, _acc_crit, _learning_rates, _number_of_neurons, _smooth=50, _history=True):
 
     """
     plot the history of accuracy and loss for every learning rate and number of neurons and
@@ -129,29 +139,64 @@ def plot_calculations(_summary, _acc_test, _acc_crit, _learning_rates, _number_o
     cutoff = 25
     iterations = range(len(_summary[0, 0, 1, :-cutoff]))
 
-    fig = plt.figure(figsize=[13, 10])
+    if(_history):
+        fig = plt.figure(figsize=[14, 10])
+        for i, lr in enumerate(_learning_rates):
+            for j, nn in enumerate(_number_of_neurons):
+                ax1 = fig.add_subplot(2, 2, 1)
+                ax1.plot(iterations, smooth(_summary[j, i, 1, :], smoothing)[:-cutoff],
+                         label="lr: %.4f, nn: %i" % (lr, nn),
+                         linewidth=1.0)
+                ax1.title.set_text("Loss")
+                ax1.set_ylim(bottom=0, top=1)
+                ax1.set_xlim(0, max(iterations))
+                ax1.legend(loc=1, bbox_to_anchor=(1.4, 1.0))
 
-    for i, lr in enumerate(_learning_rates):
-        for j, nn in enumerate(_number_of_neurons):
-            ax1 = fig.add_subplot(2, 2, 1)
-            ax1.plot(iterations, smooth(_summary[i, j, 1, :], smoothing)[:-cutoff],
-                     label="lr: %.4f, nn: %i" % (lr, nn),
-                     linewidth=1.0)
-            ax1.title.set_text("Loss")
-            ax1.set_ylim(bottom=0, top=1)
-            plt.legend()
+                ax2 = fig.add_subplot(2, 2, 2)
+                ax2.plot(iterations, smooth(_summary[j, i, 0, :], smoothing)[:-cutoff],
+                         label="lr: %.4f, nn: %i" % (lr, nn),
+                         linewidth=1.0)
+                ax2.title.set_text("Accuracy")
+                ax2.set_xlim(0, max(iterations))
 
-            ax2 = fig.add_subplot(2, 2, 2)
-            ax2.plot(iterations, smooth(_summary[i, j, 0, :], smoothing)[:-cutoff],
-                     label="lr: %.4f, nn: %i" % (lr, nn),
-                     linewidth=1.0)
-            ax2.title.set_text("Accuracy")
-            plt.legend()
+        ax3 = fig.add_subplot(2, 2, 3)
+        plot_acc(fig, ax3, _acc_test, _learning_rates, _number_of_neurons, "Test Accuracy")
 
-    ax3 = fig.add_subplot(2, 2, 3)
-    plot_acc(fig, ax3, _acc_test, _learning_rates, _number_of_neurons, "Test Accuracy")
+        ax4 = fig.add_subplot(2, 2, 4)
+        plot_acc(fig, ax4, _acc_crit, _learning_rates, _number_of_neurons, "Critical Accuracy")
 
-    ax4 = fig.add_subplot(2, 2, 4)
-    plot_acc(fig, ax4, _acc_crit, _learning_rates, _number_of_neurons, "Critical Accuracy")
+        fig.tight_layout(w_pad=2, h_pad=4)
 
-    fig.tight_layout(w_pad=2, h_pad=4)
+    else:
+        fig = plt.figure(figsize=[14,7])
+
+        ax1 = fig.add_subplot(1, 2, 1)
+        plot_acc(fig, ax1, _acc_test, _learning_rates, _number_of_neurons, "Test Accuracy")
+
+        ax2 = fig.add_subplot(1, 2, 2)
+        plot_acc(fig, ax2, _acc_crit, _learning_rates, _number_of_neurons, "Critical Accuracy")
+
+        fig.tight_layout(w_pad=2, h_pad=4)
+
+def plot_net_magnetization(_data, _interval=1, _smooth=1):
+    print(_data.shape)
+    _n_samples = _data.shape[0]
+    _interval = get_nearest_proper_divisor(_interval, _n_samples)
+    _n_samples = _n_samples // _interval
+    _t_int = np.multiply(range(_n_samples),_interval)
+
+    _net_mag = np.empty(shape=(_n_samples))
+    for i in range(_n_samples):
+        _net_mag[i] = abs(sum(_data[i*_interval,:]))/1600
+
+    _net_mag_smooth = smooth(_net_mag, _smooth)
+    _net_mag_smooth[0:300] = 1
+    fig = plt.figure(figsize=(11,6))
+    ax  = fig.add_subplot(1,1,1)
+    ax.plot(_t_int, _net_mag, label="net mag")
+    ax.plot(_t_int, _net_mag_smooth, label="net mag smoothed")
+    ax.legend()
+
+    ax.set_xlim(0,_n_samples*_interval)
+    ax.set_xlabel("sample n")
+    ax.set_ylabel("net magnetization")

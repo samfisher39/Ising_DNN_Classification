@@ -37,27 +37,31 @@ os.remove("./logs/latest.txt")
 data, labels = init(_reinit=False, _save=True, _verbose=True)
 data_set = post_init(data, labels)
 
+# %% ~~~~~~~~~~~~~ net magnetization ~~~~~~~~~~~~~~~~~
+plot_net_magnetization(data, _interval=50, _smooth=100)
+
 # %% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Plotting some samples ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 n_plots = 20
 rdm_idx = np.floor(np.random.rand(n_plots) * 159999).astype("int")
 plot_samples(data, labels, _sample_indices=rdm_idx,
              _title="some ordered (1), mixed (1|0) and unordered (0) states",
-             _title_pad=50)
+             _title_pad=30)
+
 
 # %%
 learning_rates = np.logspace(-3, -1, 3)
-number_of_neurons = np.logspace(1, 3, 3).astype("int")
+# number_of_neurons = np.logspace(0, 3, 4).astype("int")
+number_of_neurons = np.array([10,50,100])
 print(learning_rates)
 print(number_of_neurons)
 
 # %%
 
-number_of_hidden_layers = 1
+number_of_hidden_layers = 2
 summary, acc_test, acc_crit = find_optimal_args(data_set, learning_rates, number_of_neurons, number_of_hidden_layers,
-                                                _n_epochs=1)
-
+                                                _n_epochs=1, _seed=1000)
 
 # %%
-plot_calculations(summary, acc_test, acc_crit, learning_rates, number_of_neurons, _smooth=10)
+plot_calculations(summary, acc_test, acc_crit, learning_rates, number_of_neurons, _smooth=10, _history=False)
 
 

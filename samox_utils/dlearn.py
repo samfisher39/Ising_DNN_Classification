@@ -128,6 +128,8 @@ def analyze_dnn(_data_set, _n_neurons, _n_layers, _optimizer_kwargs, _n_epochs, 
 
         accuracy = np.empty(shape=(_n_epochs, _n_batches))
         loss = np.empty(shape=(_n_epochs, _n_batches))
+        # accuracy = np.empty(shape=_n_epochs*_n_batches)
+        # loss = np.empty(shape=_n_epochs*_n_batches)
 
         print_log("Learning rate: %f" % (_optimizer_kwargs["learning_rate"]), "number of neurons: %i" % _n_neurons,
                   _top=False, log_file="./logs/latest.txt")
@@ -151,11 +153,6 @@ def analyze_dnn(_data_set, _n_neurons, _n_layers, _optimizer_kwargs, _n_epochs, 
                                                feed_dict=batch_feed_dict)
                 _loss_batch, _accuracy_batch = sess.run([dnn.loss, dnn.accuracy],
                                                         feed_dict=batch_feed_dict)
-
-                # if _accuracy_batch < 0:
-                #     _accuracy_batch = 0
-                # elif _accuracy_batch > 1:
-                #     _accuracy_batch = 1
 
                 accuracy[epoch_idx, batch_idx] = _accuracy_batch
                 loss[epoch_idx, batch_idx] = _loss_batch
@@ -198,6 +195,9 @@ def analyze_dnn(_data_set, _n_neurons, _n_layers, _optimizer_kwargs, _n_epochs, 
         print_log("", "CRIT-SET:", "- Loss: %f" % _loss_crit, "- Accuracy: %f" % _accuracy_crit, "", _top=False,
                   log_file="./logs/latest.txt")
 
+        accuracy = np.ravel(accuracy)
+        loss = np.ravel(loss)
+
         # return accuracy, loss
         return accuracy, loss, _accuracy_test, _accuracy_crit
 
@@ -222,7 +222,7 @@ def find_optimal_args(_data_set, _lr_array, _neurons_array, _n_layers, _seed=1, 
     """
 
     _summary = np.empty(shape=(len(_neurons_array), len(_lr_array), 2,
-                               get_nearest_proper_divisor(_n_batches, _data_set["train"].n_samples)))
+                               _n_epochs * get_nearest_proper_divisor(_n_batches, _data_set["train"].n_samples)))
     acc_test = np.empty(shape=(len(_neurons_array), len(_lr_array)))
     acc_crit = np.empty(shape=(len(_neurons_array), len(_lr_array)))
 
